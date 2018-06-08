@@ -11,23 +11,25 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+
 ## About
 
-I’m Gordon. I studied Math in college and discovered Data Science through Numerical Analysis. This is my space for documenting my projects in Data Science and other areas. Here are some pertinent links
 
-* [Blog](https://medium.com/@gorafle)
+I’m Gordon. I studied Math in college and discovered Data Science through Numerical Analysis. This is my space for documenting my projects in Data Science and other areas. Here are some pertinent links.
 
-* [GitHub](https://github.com/gfleetwood)
 
-* [LinkedIn](https://www.linkedin.com/in/gfleetwood/)
+| [Blog](https://medium.com/@gorafle) | [GitHub](https://github.com/gfleetwood) | [LinkedIn](https://www.linkedin.com/in/gfleetwood/) | [Email](gfleetwood@protonmail.com)
+|----------|----------|----------|----------|
 
-* Email: gfleetwood@protonmail.com
 
 ## Projects
 
+
 These are more or less sorted in descending order with more recent projects coming first. I also have an [eclectic collection of various resources](https://gfleetwood.github.io/noted-resources/) across several areas.
 
+
 ### Data Science
+
 
 **Prostate Cancer**: [[Blog]](https://github.com/gfleetwood/prostate-cancer/blob/master/reports/prostate_cancer.md)
 
@@ -60,7 +62,9 @@ moved through three increasing complex examples of its use. The repository also 
 
 **Description**: Expected Goals is the hot metric in soccer analytics. Here I compare the actual results and those predicted by Expected Goals compare in Germany's top soccer league, the Bundesliga.
 
+
 ### Software
+
 
 **NYC Subway Stops**: [[Blog]](https://medium.com/@gorafle/scratching-a-subway-itch-part-1-2af4e43a54aa)[[Code]](https://github.com/gfleetwood/nyc-subway-stops)[[Website]](https://amazing-beaver-77613f.netlify.com)
 
@@ -70,32 +74,40 @@ moved through three increasing complex examples of its use. The repository also 
 
 **Description**: An interactive app made in R which shows the Open Data Science Conference's (ODSC) meetups around the world. Data is scraped from the Meetup.com using rvest, and displayed as a map via the leaflet library. The flexdashboard library provides the layout.
 
+
 ### Packages
 
-**ofziermessr**:
+
+**ofziermessr**: [[Code]](https://github.com/gfleetwood/ofziermessr)
 
 **Description**: A collection of personal R Data Science scripts. The name is a bastardization of ther German word for Swiss Army knife.
 
-**sansor**:
+**sansor**: [[Code]](https://github.com/gfleetwood/sansor)
 
 **Description**: An R wrapper over several command line utilities for Data Science.
 
-**handyman**:
+**handyman**: [[Code]](https://github.com/gfleetwood/handyman)
 
 **Description**: A collection of personal Python Data Science scripts.
 
-**pydata**:
+**pydata**: [[Code]](https://github.com/gfleetwood/pydata)
 
 **Description**: An attempt to recreate the tidyverse package in Python. The package's essence is its loading of several packages at once.
 
+
 ### A.I
 
+
 Loading...
+
 
 ### Hardware
 
+
 Loading...
 
+
 ### Other
+
 
 Loading...
