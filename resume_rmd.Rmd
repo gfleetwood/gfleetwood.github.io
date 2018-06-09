@@ -1,0 +1,50 @@
+---
+output: 
+  pdf_document:
+    latex_engine: pdflatex
+    template: rap-latex-cv.tex
+geometry: margin=1in
+
+title: "Resume"
+author: Gordon Fleetwood
+address: "Fresh Meadows, NY, 11365"
+fontawesome: no
+email: gfleetwood@protonmail.com
+github: github.com/gfleetwood  
+phone: "347-303-5837"
+web: gfleetwood.github.io
+updated: no
+
+fontfamily: mathpazo
+fontfamilyoptions: sc, osf
+fontsize: 11pt
+linkcolor: blue
+urlcolor: blue
+---
+
+# EDUCATION
+
+*University of California, Davis*, Ph.D. candidate Ecology \hfill expected 2018  
+*University of San Francisco*, M.S. Biology \hfill 2010  
+*University of California, Davis*, B.S. Wildlife, Fish, & Conservation Biology \hfill 2002  
+
+# EMPLOYMENT
+
+*USDA Forest Service, Pacific Southwest Research Station:*
+
+ > **Biological Science Technician** \hfill 2010
+ 
+ Developed and designed website on ecology, river regulation and conservation of the foothill yellow-legged frog (*Rana boylii*), including GIS synthesis and development of a map showing over 6,000 records from multiple sources to provide a comprehensive view of *R. boylii’s* distribution in California and Oregon ( http://gis.fs.fed.us/psw/topics/wildlife/herp/rana_boylii/ ). Conducted 1-D RHABSIM modeling and analysis.  Coordinate field research, data collection, and writing. 
+
+*University of California, Berkeley:*
+
+ > **Research Assistant II**  \hfill 2009--2010
+ 
+  As part of a California Energy Commission study of regulated flow effects on foothill yellow-legged frog (*Rana boylii*) breeding habitat, led field research crews for extensive field data collection.  Collaborated with Sarah Yarnell and Amy Lind on field methodology and integrating graduate research with the grant research.  Worked in rugged terrain in large rivers throughout California, collected habitat data, including multiple cross-section data on depth and velocity, substrate size, and cover.  Conducted visual encounter surveys for egg masses, tadpoles, and post-metamorphic frogs in 500-meter sites in each river.
+ 
+# TEACHING
+
+*Instructor, Software/Data Carpentry* \hfill 2016, 2-3 wknds/yr
+
+> Teach researchers in science, engineering, medicine, and related disciplines the computing skills they need to get more done using open source and reproducible tools. Specifically, have taught ecology/natural science and genomics workshops at Stanford, UC Davis, UC Berkeley, and University of Rhode Island Coastal Institute. (http://software-carpentry.org/) (http://www.datacarpentry.org/)
+  

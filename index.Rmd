@@ -18,8 +18,8 @@ knitr::opts_chunk$set(echo = TRUE)
 I’m Gordon. I studied Math in college and discovered Data Science through Numerical Analysis. This is my space for documenting my projects in Data Science and other areas. Here are some pertinent links.
 
 
-| [Blog](https://medium.com/@gorafle) | [GitHub](https://github.com/gfleetwood) | [LinkedIn](https://www.linkedin.com/in/gfleetwood/) | [Email](gfleetwood@protonmail.com)
-|----------|----------|----------|----------|
+| [Blog](https://medium.com/@gorafle) | [GitHub](https://github.com/gfleetwood) | [LinkedIn](https://www.linkedin.com/in/gfleetwood/) | <a href="https://github.com/gfleetwood/gfleetwood.github.io/blob/master/resume.pdf" download>Resume</a>| [Email](gfleetwood@protonmail.com)
+|----------|----------|----------|----------|----------|
 
 
 ## Projects
