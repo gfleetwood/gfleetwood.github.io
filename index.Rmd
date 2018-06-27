@@ -11,103 +11,88 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-
 ## About
-
+<br/>
 
 I’m Gordon. I studied Math in college and discovered Data Science through Numerical Analysis. This is my space for documenting my projects in Data Science and other areas. Here are some pertinent links.
+<br/>
 
 
 | [Blog](https://medium.com/@gorafle) | [GitHub](https://github.com/gfleetwood) | [LinkedIn](https://www.linkedin.com/in/gfleetwood/) | <a href="https://github.com/gfleetwood/gfleetwood.github.io/blob/master/resume.pdf" download>Resume</a>| [Email](gfleetwood@protonmail.com)
 |----------|----------|----------|----------|----------|
-
+<br/>
 
 ## Projects
-
-
+<br/>
 These are more or less sorted in descending order with more recent projects coming first. I also have an [eclectic collection of various resources](https://gfleetwood.github.io/noted-resources/) across several areas.
-
+<br/>
 
 ### Data Science
-
+<br/>
 
 **Prostate Cancer**: [[Blog]](https://github.com/gfleetwood/prostate-cancer/blob/master/reports/prostate_cancer.md)
 
 **Description**: Analysis of of a small data set of 12,600 gene markers to find patterns which indicate the presence or absence of a tumor. 
 
 **Final Result**: A Logistic Regression model with a 98% ROC-AUC score on the training set and 88% for the test set. Feature selection identified 67 genes with non-zero feature importances.
+<br/>
 
-**Classifying Hate Speech**: [[App]](gordon.pythonanywhere.com)[[Blog]](https://www.opendatascience.com/blog/identifying-hate-speech/)[[Code]](https://github.com/gfleetwood/crowd-flower-hate-speech)
+**Classifying Hate Speech**: [[Blog]](https://www.opendatascience.com/blog/identifying-hate-speech/)[[Code]](https://github.com/gfleetwood/crowd-flower-hate-speech)
 
 **Description**: Identifying hate speech is an important task on the internet. I used scikit-learn and the nltk package to build a hate speech classifier using Twitter data from CrowdFlower.
 
 **Final Result**: The final model utilized the Random Forest Classifier and achieved 76% accuracy on unseen data, a 26% increase over the baseline accuracy of 50%. I productionized the model as an app which allows a user to submit text to be classified.
+<br/>
 
 **Analyzing Kickstarter Data**: [[Blog]](http://blog.nycdatascience.com/students-work/scraping-kickstarter/)[[Code]](https://github.com/gfleetwood/nyc-data-science-academy/tree/master/scraping_kickstarter)
 
 **Description**: Kickstarter is the foremost platform for crowd-sourced projects on the internet. I scraped data from the site and used R's caret library to predict whether or not a project will be funded. 
 
 **Final Result**: The final model was an ensemble of a Logistic Regression classifier built on numerical features and a Random Forest model built from text features. It achieved close to 83% accuracy on unseen data compared to a baseline of 60%.
+<br/>
 
 **An Introduction To Principal Component Analysis**: [[Code]](https://github.com/gfleetwood/pca_presentation)
 
 **Description**: A talk given at the New York Data Science Study Group's [meeting for August](http://www.meetup.com/NYC-Data-Science-Study-Group/events/227860773/). In the presentation I went through the algorithm's mathematical foundations, and then
 moved through three increasing complex examples of its use. The repository also contains a link to a [binder](http://mybinder.org/) for interactive exploration of the material.
+<br/>
 
 **11 Years of Statehood Stability**: [[Blog]](http://rpubs.com/gfleetwood/statehood-stability)[[Code]](https://github.com/gfleetwood/data-science-projects-collection/tree/master/fragile_states)
 
 **Description**: The Fund For Peace is a nonprofit which applies a data-driven approach to understanding the world's problems. One of their initiatives is the Fragile State Index, a yearly ranking of the stability of countries around the world. With over a decade’s worth of their data in hand, let’s see what it has to say.
+<br/>
 
 **Bundesliga xG 15-16**: [[Blog]](http://rpubs.com/gfleetwood/bundes-15-16-xg)[[Code]](https://github.com/gfleetwood/soccer-analytics/tree/master/bundesliga_xg)
 
 **Description**: Expected Goals is the hot metric in soccer analytics. Here I compare the actual results and those predicted by Expected Goals compare in Germany's top soccer league, the Bundesliga.
-
+<br/>
 
 ### Software
-
-
-**NYC Subway Stops**: [[Blog]](https://medium.com/@gorafle/scratching-a-subway-itch-part-1-2af4e43a54aa)[[Code]](https://github.com/gfleetwood/nyc-subway-stops)[[Website]](https://amazing-beaver-77613f.netlify.com)
-
-**Description**: A (more or less) progressive, minimalist React web app with an interactive display of New York City's train stations and available transfers at said stations.
+<br/>
 
 **ODSC Meetup Map**: [[App]](https://gfleetwood.shinyapps.io/odsc_meetup_map/)[[Code]](https://github.com/OpenDataScienceConference/meetup-map)
 
 **Description**: An interactive app made in R which shows the Open Data Science Conference's (ODSC) meetups around the world. Data is scraped from the Meetup.com using rvest, and displayed as a map via the leaflet library. The flexdashboard library provides the layout.
-
+<br/>
 
 ### Packages
-
-
-**ofziermessr**: [[Code]](https://github.com/gfleetwood/ofziermessr)
-
-**Description**: A collection of personal R Data Science scripts. The name is a bastardization of ther German word for Swiss Army knife.
+<br/>
 
 **sansor**: [[Code]](https://github.com/gfleetwood/sansor)
 
 **Description**: An R wrapper over several command line utilities for Data Science.
-
-**handyman**: [[Code]](https://github.com/gfleetwood/handyman)
-
-**Description**: A collection of personal Python Data Science scripts.
+<br/>
 
 **pydata**: [[Code]](https://github.com/gfleetwood/pydata)
 
 **Description**: An attempt to recreate the tidyverse package in Python. The package's essence is its loading of several packages at once.
 
+**handyman**: [[Code]](https://github.com/gfleetwood/handyman)
 
-### A.I
+**Description**: A collection of personal Python Data Science scripts.
+<br/>
 
+**ofziermessr**: [[Code]](https://github.com/gfleetwood/ofziermessr)
 
-Loading...
-
-
-### Hardware
-
-
-Loading...
-
-
-### Other
-
-
-Loading...
+**Description**: A collection of personal R Data Science scripts. The name is a bastardization of ther German word for Swiss Army knife.
+<br/>
