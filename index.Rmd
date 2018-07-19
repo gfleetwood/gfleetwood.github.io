@@ -22,7 +22,7 @@ I’m Gordon. I studied Math in college and discovered Data Science through Nume
 
 ## Projects
 <br/>
-These are more or less sorted in descending order with more recent projects coming first. I also have an [eclectic collection of various resources](https://gfleetwood.github.io/noted-resources/) across several areas.
+These are more or less sorted in descending order with more recent projects coming first.
 <br/>
 
 ### Data Science
@@ -83,7 +83,7 @@ moved through three increasing complex examples of its use. The repository also 
 
 **Description**: A collection of personal Python Data Science scripts.
 
-```{r, eval = FALSE, echo=FALSE, }
+```{r, eval = FALSE, echo=FALSE}
 # **sansor**: [[Code]](https://github.com/gfleetwood/sansor)
 # 
 # **Description**: An R wrapper over several command line utilities for Data Science.
