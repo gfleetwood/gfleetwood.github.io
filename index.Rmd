@@ -1,22 +1,20 @@
 ---
-title: "Logos & Teche"
+title: ""
 output:
-  html_document:
-    toc: true
-    toc_depth: 3
-    toc_float: true
+  html_document
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+<center><h1>logos & teche</h1></center>
+
 ## About
 <br/>
 
 I’m Gordon. I studied Math in college and discovered Data Science through Numerical Analysis. This is my space for documenting my projects in Data Science and other areas. Here are some pertinent links.
 <br/>
-
 
 | [Blog](https://medium.com/@gorafle) | [GitHub](https://github.com/gfleetwood) | [LinkedIn](https://www.linkedin.com/in/gfleetwood/) | <a href="https://github.com/gfleetwood/gfleetwood.github.io/blob/master/resume.pdf" download>Resume</a>| [Email](gfleetwood@protonmail.com)
 |----------|----------|----------|----------|----------|
@@ -29,7 +27,6 @@ These are more or less sorted in descending order with more recent projects comi
 
 ### Data Science
 <br/>
-
 **Prostate Cancer**: [[Blog]](https://github.com/gfleetwood/prostate-cancer/blob/master/reports/prostate_cancer.md)
 
 **Description**: Analysis of of a small data set of 12,600 gene markers to find patterns which indicate the presence or absence of a tumor. 
@@ -78,11 +75,6 @@ moved through three increasing complex examples of its use. The repository also 
 ### Packages
 <br/>
 
-**sansor**: [[Code]](https://github.com/gfleetwood/sansor)
-
-**Description**: An R wrapper over several command line utilities for Data Science.
-<br/>
-
 **pydata**: [[Code]](https://github.com/gfleetwood/pydata)
 
 **Description**: An attempt to recreate the tidyverse package in Python. The package's essence is its loading of several packages at once.
@@ -90,9 +82,17 @@ moved through three increasing complex examples of its use. The repository also 
 **handyman**: [[Code]](https://github.com/gfleetwood/handyman)
 
 **Description**: A collection of personal Python Data Science scripts.
-<br/>
 
-**ofziermessr**: [[Code]](https://github.com/gfleetwood/ofziermessr)
+```{r, eval = FALSE, echo=FALSE, }
+# **sansor**: [[Code]](https://github.com/gfleetwood/sansor)
+# 
+# **Description**: An R wrapper over several command line utilities for Data Science.
+# 
+# **ofziermessr**: [[Code]](https://github.com/gfleetwood/ofziermessr)
+# 
+# **Description**: A collection of personal R Data Science scripts. The name is a bastardization of ther German word for Swiss Army knife.
+```
 
-**Description**: A collection of personal R Data Science scripts. The name is a bastardization of ther German word for Swiss Army knife.
+
+
 <br/>
