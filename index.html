@@ -150,8 +150,12 @@ logos &amp; teche
 <p><br /> These are more or less sorted in descending order with more recent projects coming first. <br /></p>
 <div id="data-science" class="section level3">
 <h3>Data Science</h3>
-<p><br /> <strong>Prostate Cancer</strong>: <a href="https://github.com/gfleetwood/prostate-cancer/blob/master/reports/prostate_cancer.md">[Blog]</a></p>
-<p><strong>Description</strong>: Analysis of of a small data set of 12,600 gene markers to find patterns which indicate the presence or absence of a tumor.</p>
+<p><br /> <strong>Pass Prediction In Soccer</strong>:</p>
+<p><strong>Description</strong>: Analysis of data for the <a href="https://github.com/JanVanHaaren/mlsa18-pass-prediction">Football Pass Prediction Challenge of the 5th Workshop on Machine Learning and Data Mining for Sports Analytics</a>. It consisted of mostly of player location data for over 12,000 passes from Belgian soccer. The stated goal was to predict the recipient of a pass.</p>
+<p><strong>Summary</strong>: The main pipeline involved feature engineering to create a feature for distance, another for the product of x-y coordinates, scaling numeric features, and dummying the sole categorical column.</p>
+<p><strong>Final Result</strong>: A 5-fold cross validated untuned Logistic Regression model with a 23% accuracy score compared to a naive baseline of 5.6%. <br /></p>
+<p><strong>Prostate Cancer</strong>: <a href="https://github.com/gfleetwood/prostate-cancer/blob/master/reports/prostate_cancer.md">[Blog]</a></p>
+<p><strong>Description</strong>: Analysis of a small data set of 12,600 gene markers to find patterns which indicate the presence or absence of a tumor.</p>
 <p><strong>Final Result</strong>: A Logistic Regression model with a 98% ROC-AUC score on the training set and 88% for the test set. Feature selection identified 67 genes with non-zero feature importances. <br /></p>
 <p><strong>Classifying Hate Speech</strong>: <a href="https://www.opendatascience.com/blog/identifying-hate-speech/">[Blog]</a><a href="https://github.com/gfleetwood/crowd-flower-hate-speech">[Code]</a></p>
 <p><strong>Description</strong>: Identifying hate speech is an important task on the internet. I used scikit-learn and the nltk package to build a hate speech classifier using Twitter data from CrowdFlower.</p>

@@ -27,9 +27,18 @@ These are more or less sorted in descending order with more recent projects comi
 
 ### Data Science
 <br/>
+**Pass Prediction In Soccer**:
+
+**Description**: Analysis of data for the [Football Pass Prediction Challenge of the 5th Workshop on Machine Learning and Data Mining for Sports Analytics](https://github.com/JanVanHaaren/mlsa18-pass-prediction). It consisted of mostly of player location data for over 12,000 passes from Belgian soccer. The stated goal was to predict the recipient of a pass.
+
+**Summary**: The main pipeline involved feature engineering to create a feature for distance, another for the product of x-y coordinates, scaling numeric features, and dummying the sole categorical column.
+
+**Final Result**: A 5-fold cross validated untuned Logistic Regression model with a 23% accuracy score compared to a naive baseline of 5.6%.
+<br/>
+
 **Prostate Cancer**: [[Blog]](https://github.com/gfleetwood/prostate-cancer/blob/master/reports/prostate_cancer.md)
 
-**Description**: Analysis of of a small data set of 12,600 gene markers to find patterns which indicate the presence or absence of a tumor. 
+**Description**: Analysis of a small data set of 12,600 gene markers to find patterns which indicate the presence or absence of a tumor. 
 
 **Final Result**: A Logistic Regression model with a 98% ROC-AUC score on the training set and 88% for the test set. Feature selection identified 67 genes with non-zero feature importances.
 <br/>
