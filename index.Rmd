@@ -94,7 +94,7 @@ moved through three increasing complex examples of its use. The repository also 
 
 **ofziermessr**: [[Code]](https://github.com/gfleetwood/ofziermessr)
 
-**Description**: A collection of personal R Data Science scripts. The name is a bastardization of ther German word for Swiss Army knife.
+**Description**: A collection of personal R Data Science scripts. The name is a bastardization of the German word for Swiss Army knife.
 
 ```{r, eval = FALSE, echo=FALSE}
 # **sansor**: [[Code]](https://github.com/gfleetwood/sansor)
