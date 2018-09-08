@@ -90,6 +90,9 @@ img {
 .tabbed-pane {
   padding-top: 12px;
 }
+.html-widget {
+  margin-bottom: 20px;
+}
 button.code-folding-btn:focus {
   outline: none;
 }
@@ -129,44 +132,41 @@ logos &amp; teche
 <div id="about" class="section level2">
 <h2>About</h2>
 <p><br /></p>
-<p>I’m Gordon. I studied Math in college and discovered Data Science through Numerical Analysis. This is my space for documenting my projects in Data Science and other areas. Here are some pertinent links. <br /></p>
-<table>
-<thead>
-<tr class="header">
-<th><a href="https://medium.com/@gorafle">Blog</a></th>
-<th><a href="https://github.com/gfleetwood">GitHub</a></th>
-<th><a href="https://www.linkedin.com/in/gfleetwood/">LinkedIn</a></th>
-<th><a href="https://github.com/gfleetwood/gfleetwood.github.io/blob/master/resume.pdf" download>Resume</a></th>
-<th><a href="gfleetwood@protonmail.com">Email</a></th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+<p>I’m Gordon. I studied Math in college and discovered Data Science through Numerical Analysis. This is my space for documenting my projects in Data Science and other areas. You can contact me at <code>gfleetwood@protonmail.com</code>. Here are some pertinent links.</p>
+<p><br /></p>
+<center>
+<a href="https://medium.com/@gorafle"><strong>Blog</strong></a> | <a href="https://github.com/gfleetwood"><strong>GitHub</strong></a> | <a href="https://www.linkedin.com/in/gfleetwood/"><strong>LinkedIn</strong></a> | <a href="https://github.com/gfleetwood/gfleetwood.github.io/blob/master/resume.pdf" download><b>Resume</b></a>
+</center>
 <p><br /></p>
 </div>
 <div id="projects" class="section level2">
 <h2>Projects</h2>
-<p><br /> These are more or less sorted in descending order with more recent projects coming first. <br /></p>
+<p><br /></p>
 <div id="data-science" class="section level3">
 <h3>Data Science</h3>
-<p><br /> <strong>Pass Prediction In Soccer</strong>: <a href="https://medium.com/@gorafle/predicting-pass-recipients-in-soccer-a3acf0fa2652">[Blog]</a> | <a href="https://github.com/gfleetwood/pass-prediction">[Code]</a></p>
+<p><br /></p>
+<p><strong><a href="https://gfleetwood.github.io/ds-crib-sheet/">Data Science Crib Sheet</a></strong></p>
+<p>Description: A personal theoretical and practical reference for various Data Science operations.</p>
+<p><strong>Pass Prediction In Soccer</strong>: <a href="https://medium.com/@gorafle/predicting-pass-recipients-in-soccer-a3acf0fa2652">[Blog]</a> | <a href="https://github.com/gfleetwood/pass-prediction">[Code]</a></p>
 <p><strong>Description</strong>: Analysis of data for the <a href="https://github.com/JanVanHaaren/mlsa18-pass-prediction">Football Pass Prediction Challenge of the 5th Workshop on Machine Learning and Data Mining for Sports Analytics</a>. It consisted of mostly of player location data for over 12,000 passes from Belgian soccer. The stated goal was to predict the recipient of a pass.</p>
 <p><strong>Summary</strong>: The main pipeline involved feature engineering to create a feature for distance, another for the product of x-y coordinates, scaling numeric features, and dummying the sole categorical column.</p>
 <p><strong>Final Result</strong>: A 5-fold cross validated untuned Logistic Regression model with a 23% accuracy score compared to a naive baseline of 5.6%. <br /></p>
-<p><strong>Prostate Cancer</strong>: <a href="https://github.com/gfleetwood/prostate-cancer/blob/master/reports/prostate_cancer.md">[Blog]</a></p>
-<p><strong>Description</strong>: Analysis of a small data set of 12,600 gene markers to find patterns which indicate the presence or absence of a tumor.</p>
-<p><strong>Final Result</strong>: A Logistic Regression model with a 98% ROC-AUC score on the training set and 88% for the test set. Feature selection identified 67 genes with non-zero feature importances. <br /></p>
-<p><strong>Classifying Hate Speech</strong>: <a href="https://www.opendatascience.com/blog/identifying-hate-speech/">[Blog]</a><a href="https://github.com/gfleetwood/crowd-flower-hate-speech">[Code]</a></p>
+<p><strong>Classifying Hate Speech</strong>: <a href="https://www.opendatascience.com/blog/identifying-hate-speech/">[Blog]</a> | <a href="https://github.com/gfleetwood/crowd-flower-hate-speech">[Code]</a></p>
 <p><strong>Description</strong>: Identifying hate speech is an important task on the internet. I used scikit-learn and the nltk package to build a hate speech classifier using Twitter data from CrowdFlower.</p>
 <p><strong>Final Result</strong>: The final model utilized the Random Forest Classifier and achieved 76% accuracy on unseen data, a 26% increase over the baseline accuracy of 50%. I productionized the model as an app which allows a user to submit text to be classified. <br /></p>
-<p><strong>Analyzing Kickstarter Data</strong>: <a href="http://blog.nycdatascience.com/students-work/scraping-kickstarter/">[Blog]</a><a href="https://github.com/gfleetwood/nyc-data-science-academy/tree/master/scraping_kickstarter">[Code]</a></p>
+<p><strong>Analyzing Kickstarter Data</strong>: <a href="http://blog.nycdatascience.com/students-work/scraping-kickstarter/">[Blog]</a> | <a href="https://github.com/gfleetwood/nyc-data-science-academy/tree/master/scraping_kickstarter">[Code]</a></p>
 <p><strong>Description</strong>: Kickstarter is the foremost platform for crowd-sourced projects on the internet. I scraped data from the site and used R’s caret library to predict whether or not a project will be funded.</p>
 <p><strong>Final Result</strong>: The final model was an ensemble of a Logistic Regression classifier built on numerical features and a Random Forest model built from text features. It achieved close to 83% accuracy on unseen data compared to a baseline of 60%. <br /></p>
 <p><strong>An Introduction To Principal Component Analysis</strong>: <a href="https://github.com/gfleetwood/pca_presentation">[Code]</a></p>
 <p><strong>Description</strong>: A talk given at the New York Data Science Study Group’s <a href="http://www.meetup.com/NYC-Data-Science-Study-Group/events/227860773/">meeting for August</a>. In the presentation I went through the algorithm’s mathematical foundations, and then moved through three increasing complex examples of its use. The repository also contains a link to a <a href="http://mybinder.org/">binder</a> for interactive exploration of the material. <br /></p>
-<p><strong>11 Years of Statehood Stability</strong>: <a href="http://rpubs.com/gfleetwood/statehood-stability">[Blog]</a><a href="https://github.com/gfleetwood/data-science-projects-collection/tree/master/fragile_states">[Code]</a></p>
-<p><strong>Description</strong>: The Fund For Peace is a nonprofit which applies a data-driven approach to understanding the world’s problems. One of their initiatives is the Fragile State Index, a yearly ranking of the stability of countries around the world. With over a decade’s worth of their data in hand, let’s see what it has to say. <br /></p>
+<p><strong>pydata</strong>: <a href="https://github.com/gfleetwood/pydata">[Code]</a></p>
+<p><strong>Description</strong>: An attempt to recreate the tidyverse package in Python. The package’s essence is its loading of several packages at once.</p>
+<p><strong>handyman</strong>: <a href="https://github.com/gfleetwood/handyman">[Code]</a></p>
+<p><strong>Description</strong>: A collection of personal Python Data Science scripts.</p>
+<p><strong>ofziermessr</strong>: <a href="https://github.com/gfleetwood/ofziermessr">[Code]</a></p>
+<p><strong>Description</strong>: A collection of personal R Data Science scripts. The name is a bastardization of the German word for Swiss Army knife.</p>
+<p><strong>sansor</strong>: <a href="https://github.com/gfleetwood/sansor">[Code]</a></p>
+<p><strong>Description</strong>: An R wrapper over several command line utilities for Data Science.</p>
 <p><strong>Bundesliga xG 15-16</strong>: <a href="http://rpubs.com/gfleetwood/bundes-15-16-xg">[Blog]</a><a href="https://github.com/gfleetwood/soccer-analytics/tree/master/bundesliga_xg">[Code]</a></p>
 <p><strong>Description</strong>: Expected Goals is the hot metric in soccer analytics. Here I compare the actual results and those predicted by Expected Goals compare in Germany’s top soccer league, the Bundesliga. <br /></p>
 </div>
@@ -175,17 +175,6 @@ logos &amp; teche
 <p><br /></p>
 <p><strong>ODSC Meetup Map</strong>: <a href="https://gfleetwood.shinyapps.io/odsc_meetup_map/">[App]</a><a href="https://github.com/OpenDataScienceConference/meetup-map">[Code]</a></p>
 <p><strong>Description</strong>: An interactive app made in R which shows the Open Data Science Conference’s (ODSC) meetups around the world. Data is scraped from the Meetup.com using rvest, and displayed as a map via the leaflet library. The flexdashboard library provides the layout. <br /></p>
-</div>
-<div id="packages" class="section level3">
-<h3>Packages</h3>
-<p><br /></p>
-<p><strong>pydata</strong>: <a href="https://github.com/gfleetwood/pydata">[Code]</a></p>
-<p><strong>Description</strong>: An attempt to recreate the tidyverse package in Python. The package’s essence is its loading of several packages at once.</p>
-<p><strong>handyman</strong>: <a href="https://github.com/gfleetwood/handyman">[Code]</a></p>
-<p><strong>Description</strong>: A collection of personal Python Data Science scripts.</p>
-<p><strong>ofziermessr</strong>: <a href="https://github.com/gfleetwood/ofziermessr">[Code]</a></p>
-<p><strong>Description</strong>: A collection of personal R Data Science scripts. The name is a bastardization of ther German word for Swiss Army knife.</p>
-<p><br /></p>
 </div>
 </div>
 
