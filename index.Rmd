@@ -30,7 +30,15 @@ I’m Gordon. I studied Math in college and discovered Data Science through Nume
 
 **Data Science Crib Sheet**: [[Blog]]((https://gfleetwood.github.io/ds-crib-sheet/))
 
-Description: A personal theoretical and practical reference for various Data Science operations.
+Description: A personal theoretical and practical reference for various Data Science operations. Still under construction.
+
+**Soccer Cliches**
+
+Description: A series looking at several soccer cliches from a data-driven perspective.
+
+* [Does The New Manager Bump Exist?](https://rpubs.com/gfleetwood/new-manager-bump)
+
+* [Does Form Matter In A Derby?]()
 
 **Pass Prediction In Soccer**: [[Blog]](https://medium.com/@gorafle/predicting-pass-recipients-in-soccer-a3acf0fa2652) | [[Code]](https://github.com/gfleetwood/pass-prediction)
 
