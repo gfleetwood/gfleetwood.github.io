@@ -69,15 +69,15 @@ moved through three increasing complex examples of its use. The repository also 
 
 **handyman**: [[Code]](https://github.com/gfleetwood/handyman)
 
-**Description**: A collection of personal Python Data Science scripts.
+**Description**: A collection of personal Python Data Science scripts. **UNDER DEVELOPMENT**
 
-**ofziermessr**: [[Code]](https://github.com/gfleetwood/ofziermessr)
+**ofziermessr**: [[Code]](https://github.com/gfleetwood/ofziermessr) 
 
-**Description**: A collection of personal R Data Science scripts. The name is a bastardization of the German word for Swiss Army knife.
+**Description**: A collection of personal R Data Science scripts. The name is a bastardization of the German word for Swiss Army knife. **UNDER DEVELOPMENT**
 
 **sansor**: [[Code]](https://github.com/gfleetwood/sansor)
 
-**Description**: An R wrapper over several command line utilities for Data Science.
+**Description**: An R wrapper over several command line utilities for Data Science. **UNDER DEVELOPMENT**
 <br/>
 
 ### Software
