@@ -38,7 +38,7 @@ Description: A series looking at several soccer cliches from a data-driven persp
 
 * [Does The New Manager Bump Exist?](https://rpubs.com/gfleetwood/new-manager-bump)
 
-* [Does Form Matter In A Derby?]()
+* [Does Form Matter In A Derby?](https://rpubs.com/gfleetwood/derby-form)
 
 **Pass Prediction In Soccer**: [[Blog]](https://medium.com/@gorafle/predicting-pass-recipients-in-soccer-a3acf0fa2652) | [[Code]](https://github.com/gfleetwood/pass-prediction)
 
