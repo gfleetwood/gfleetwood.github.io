@@ -86,4 +86,8 @@ moved through three increasing complex examples of its use. The repository also 
 **ODSC Meetup Map**: [[App]](https://gfleetwood.shinyapps.io/odsc_meetup_map/)[[Code]](https://github.com/OpenDataScienceConference/meetup-map)
 
 **Description**: An interactive app made in R which shows the Open Data Science Conference's (ODSC) meetups around the world. Data is scraped from the Meetup.com using rvest, and displayed as a map via the leaflet library. The flexdashboard library provides the layout.
+
+**cantor**: [[Site]](https://cantor.bubbleapps.io/)
+
+**Description**: A website to follow GitHub organizations. Users are notified whenever new repositories are created.
 <br/>
