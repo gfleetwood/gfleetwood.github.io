@@ -13,39 +13,21 @@ knitr::opts_chunk$set(echo = TRUE)
 ## About
 <br/>
 
-My name is Gordon Fleetwoood. I studied Math in college and discovered Data Science through Numerical Analysis. This is my space for documenting my projects in Data Science and other areas. You can contact me at `gfleetwood@protonmail.com`. Here are some pertinent links.
+My name is Gordon Fleetwoood. I studied Math in college and discovered Data Science through Numerical Analysis. This is my space for documenting my projects in Data Science and other areas. You can contact me at `gfleetwood@protonmail.com`. I'm available to work on interesting data related projects. Here are some pertinent links.
 
 <br/>
 
-<center>[**Blog**](https://medium.com/@gorafle)  |  [**GitHub**](https://github.com/gfleetwood)  |  [**RPubs**](https://rpubs.com/gfleetwood)  |  [**LinkedIn**](https://www.linkedin.com/in/gfleetwood/)
+<center>[**Blog**](https://medium.com/@gorafle/my-new-blogging-workflow-8c60b564e1a2) |  [**GitHub**](https://github.com/gfleetwood) |  [**LinkedIn**](https://www.linkedin.com/in/gfleetwood/)
 
 <br/>
 
-## Freelancing
+## Projects
 
-I'm available to work on interesting data related projects. Send me an email at `gfleetwood@protonmail.com` to start a discussion.
-
-## Impersonal Projects
-
-All of these fall under the banner of my soon to be umbrella company: [teul](https://teul.launchaco.com/). Here are a few:
-
-**cantor**: [[Site]](https://cantor.bubbleapps.io/)
-
-Description: A website to follow GitHub organizations. Users are notified whenever new repositories are created. The front end uses a no code platform called Bubble to take care of user and database management. The back end uses Python for processing data, updating data, and sending emails.
-
-## Personal Projects
 <br/>
 
 ### Data Science
+
 <br/>
-
-**Soccer Cliches**
-
-Description: A series looking at several soccer cliches from a data-driven perspective.
-
-* [Does The New Manager Bump Exist?](https://rpubs.com/gfleetwood/new-manager-bump)
-
-* [Does Form Matter In A Derby?](https://rpubs.com/gfleetwood/derby-form)
 
 **Pass Prediction In Soccer**: [[Blog]](https://medium.com/@gorafle/predicting-pass-recipients-in-soccer-a3acf0fa2652) | [[Code]](https://github.com/gfleetwood/pass-prediction)
 
@@ -65,6 +47,10 @@ Summary: The final model utilized the Random Forest Classifier and achieved 76% 
 ### Software
 <br/>
 
+**cantor**: [[Site]](https://cantor.bubbleapps.io/)
+
+Description: A website to follow GitHub organizations. Users are notified whenever new repositories are created. The front end uses a no code platform called Bubble to take care of user and database management. The back end uses Python for processing data, updating data, and sending emails.
+
 **handyman**: [[Code]](https://github.com/gfleetwood/handyman)
 
 Description: A collection of personal Python Data Science scripts. 
@@ -76,12 +62,4 @@ Description: A collection of personal R Data Science scripts.
 **ODSC Meetup Map**: [[App]](https://gfleetwood.shinyapps.io/odsc_meetup_map/)[[Code]](https://github.com/OpenDataScienceConference/meetup-map)
 
 Description: An interactive app made in R which shows the Open Data Science Conference's (ODSC) meetups around the world. Data is scraped from the Meetup.com using rvest, and displayed as a map via the leaflet library. The flexdashboard library provides the layout.
-<br/>
-
-## Talks
-
-**An Introduction To Principal Component Analysis**: [[Code]](https://github.com/gfleetwood/pca_presentation)
-
-Description: A talk given at the New York Data Science Study Group's [meeting for August](http://www.meetup.com/NYC-Data-Science-Study-Group/events/227860773/). In the presentation I went through the algorithm's mathematical foundations, and then
-moved through three increasing complex examples of its use. The repository also contains a link to a [binder](http://mybinder.org/) for interactive exploration of the material.
 <br/>

@@ -96,6 +96,9 @@ img {
 button.code-folding-btn:focus {
   outline: none;
 }
+summary {
+  display: list-item;
+}
 </style>
 
 
@@ -103,14 +106,74 @@ button.code-folding-btn:focus {
 <div class="container-fluid main-container">
 
 <!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
 });
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
 </script>
 
 <!-- code folding -->
-
 
 
 
@@ -132,34 +195,18 @@ logos &amp; teche
 <div id="about" class="section level2">
 <h2>About</h2>
 <p><br /></p>
-<p>My name is Gordon Fleetwoood. I studied Math in college and discovered Data Science through Numerical Analysis. This is my space for documenting my projects in Data Science and other areas. You can contact me at <code>gfleetwood@protonmail.com</code>. Here are some pertinent links.</p>
+<p>My name is Gordon Fleetwoood. I studied Math in college and discovered Data Science through Numerical Analysis. This is my space for documenting my projects in Data Science and other areas. You can contact me at <code>gfleetwood@protonmail.com</code>. I’m available to work on interesting data related projects. Here are some pertinent links.</p>
 <p><br /></p>
 <center>
-<p><a href="https://medium.com/@gorafle"><strong>Blog</strong></a> | <a href="https://github.com/gfleetwood"><strong>GitHub</strong></a> | <a href="https://rpubs.com/gfleetwood"><strong>RPubs</strong></a> | <a href="https://www.linkedin.com/in/gfleetwood/"><strong>LinkedIn</strong></a></p>
+<p><a href="https://medium.com/@gorafle/my-new-blogging-workflow-8c60b564e1a2"><strong>Blog</strong></a> | <a href="https://github.com/gfleetwood"><strong>GitHub</strong></a> | <a href="https://www.linkedin.com/in/gfleetwood/"><strong>LinkedIn</strong></a></p>
 <p><br /></p>
 </div>
-<div id="freelancing" class="section level2">
-<h2>Freelancing</h2>
-<p>I’m available to work on interesting data related projects. Send me an email at <code>gfleetwood@protonmail.com</code> to start a discussion.</p>
-</div>
-<div id="impersonal-projects" class="section level2">
-<h2>Impersonal Projects</h2>
-<p>All of these fall under the banner of my soon to be umbrella company: <a href="https://teul.launchaco.com/">teul</a>. Here are a few:</p>
-<p><strong>cantor</strong>: <a href="https://cantor.bubbleapps.io/">[Site]</a></p>
-<p>Description: A website to follow GitHub organizations. Users are notified whenever new repositories are created. The front end uses a no code platform called Bubble to take care of user and database management. The back end uses Python for processing data, updating data, and sending emails.</p>
-</div>
-<div id="personal-projects" class="section level2">
-<h2>Personal Projects</h2>
+<div id="projects" class="section level2">
+<h2>Projects</h2>
 <p><br /></p>
 <div id="data-science" class="section level3">
 <h3>Data Science</h3>
 <p><br /></p>
-<p><strong>Soccer Cliches</strong></p>
-<p>Description: A series looking at several soccer cliches from a data-driven perspective.</p>
-<ul>
-<li><p><a href="https://rpubs.com/gfleetwood/new-manager-bump">Does The New Manager Bump Exist?</a></p></li>
-<li><p><a href="https://rpubs.com/gfleetwood/derby-form">Does Form Matter In A Derby?</a></p></li>
-</ul>
 <p><strong>Pass Prediction In Soccer</strong>: <a href="https://medium.com/@gorafle/predicting-pass-recipients-in-soccer-a3acf0fa2652">[Blog]</a> | <a href="https://github.com/gfleetwood/pass-prediction">[Code]</a></p>
 <p>Description: Analysis of data for the <a href="https://github.com/JanVanHaaren/mlsa18-pass-prediction">Football Pass Prediction Challenge of the 5th Workshop on Machine Learning and Data Mining for Sports Analytics</a>. It consisted of mostly of player location data for over 12,000 passes from Belgian soccer. The stated goal was to predict the recipient of a pass.</p>
 <p>Summary: The main pipeline involved feature engineering to create a feature for distance, another for the product of x-y coordinates, scaling numeric features, and dummying the sole categorical column. A 5-fold cross validated untuned Logistic Regression model with a 23% accuracy score compared to a naive baseline of 5.6%. <br /></p>
@@ -170,6 +217,8 @@ logos &amp; teche
 <div id="software" class="section level3">
 <h3>Software</h3>
 <p><br /></p>
+<p><strong>cantor</strong>: <a href="https://cantor.bubbleapps.io/">[Site]</a></p>
+<p>Description: A website to follow GitHub organizations. Users are notified whenever new repositories are created. The front end uses a no code platform called Bubble to take care of user and database management. The back end uses Python for processing data, updating data, and sending emails.</p>
 <p><strong>handyman</strong>: <a href="https://github.com/gfleetwood/handyman">[Code]</a></p>
 <p>Description: A collection of personal Python Data Science scripts.</p>
 <p><strong>sansor</strong>: <a href="https://github.com/gfleetwood/sansor">[Code]</a></p>
@@ -177,11 +226,6 @@ logos &amp; teche
 <p><strong>ODSC Meetup Map</strong>: <a href="https://gfleetwood.shinyapps.io/odsc_meetup_map/">[App]</a><a href="https://github.com/OpenDataScienceConference/meetup-map">[Code]</a></p>
 <p>Description: An interactive app made in R which shows the Open Data Science Conference’s (ODSC) meetups around the world. Data is scraped from the Meetup.com using rvest, and displayed as a map via the leaflet library. The flexdashboard library provides the layout. <br /></p>
 </div>
-</div>
-<div id="talks" class="section level2">
-<h2>Talks</h2>
-<p><strong>An Introduction To Principal Component Analysis</strong>: <a href="https://github.com/gfleetwood/pca_presentation">[Code]</a></p>
-<p>Description: A talk given at the New York Data Science Study Group’s <a href="http://www.meetup.com/NYC-Data-Science-Study-Group/events/227860773/">meeting for August</a>. In the presentation I went through the algorithm’s mathematical foundations, and then moved through three increasing complex examples of its use. The repository also contains a link to a <a href="http://mybinder.org/">binder</a> for interactive exploration of the material. <br /></p>
 </div>
 
 
