@@ -13,7 +13,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ## About
 <br/>
 
-My name is Gordon Fleetwoood. I studied Math in college and discovered Data Science through Numerical Analysis. This is my space for documenting my projects in Data Science and other areas. You can contact me at `gfleetwood@protonmail.com`. I'm available to work on interesting data related projects. Here are some pertinent links.
+I'm Gordon. I studied Math in college and discovered Data Science through Numerical Analysis. This is my space for documenting my projects in Data Science and other areas. You can contact me at `gfleetwood@protonmail.com`. I'm available to work on interesting data related projects. Here are some pertinent links.
 
 <br/>
 
