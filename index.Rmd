@@ -7,7 +7,3 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-
-<center><h1>logos & teche</h1></center>
-
-Here's my [new blog](https://gfleetwood.netlify.com/).
