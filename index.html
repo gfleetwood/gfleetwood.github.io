@@ -246,6 +246,21 @@ div.tocify {
 </div>
 
 
+<div id="colored-equations" class="section level2">
+<h2>Colored Equations</h2>
+<p>I had this laying around as a gist and decided to include it here. See the source here:</p>
+<p><a href="https://github.com/gfleetwood/gfleetwood.github.io/blob/master/index.Rmd" class="uri">https://github.com/gfleetwood/gfleetwood.github.io/blob/master/index.Rmd</a></p>
+<p>In particular pay attention to the LaTeX packages in the yaml header (header-includes:).</p>
+<p><span class="math inline">\(\color{blue}{y} = \color{green}{m}\color{red}{x} + \color{orange}{b}\)</span></p>
+<p>For every one unit change in the <span style="color:red">independent variable</span> there is a <span style="color:green">change</span> in the <span style="color:blue">dependent variable</span> plus some <span style="color:orange">offset/bias</span> to represent the value of the dependent variable when the independent variable is zero.</p>
+<p>For example, consider a mock linear relationship between a person’s weight in pounds and their height in inches.</p>
+<p><span class="math inline">\(\color{blue}{Weight} = \color{green}{2}*\color{red}{Height} + \color{orange}{12}\)</span></p>
+<p>This says that it is expected that a person’s <span style="color:blue">weight</span> will increase by <span style="color:green">2 pounds</span> for every additional inch in their <span style="color:red">height</span>. If a person’s height were 0 inches, then their weight would be <span style="color:orange">12 pounds</span>.</p>
+<p>From DataCamp’s Bayesian course</p>
+<p><span class="math inline">\(P(\color{orange}{\theta}|\color{purple}{D}) = \frac{\color{green}{P(D|\theta)}\times \color{blue}{P(\theta})}{\color{red}{\Sigma{P(D|\theta)} \times P(\theta)}}\)</span></p>
+<p><br></p>
+<p>The probability of <span style="color:orange">different parameter values</span> given <span style="color:purple">some data</span> is <span style="color:green">the likelihood (The relative probability of the data given different parameter values)</span> multiplied by <span style="color:blue">the prior (The probability of different parameters before seeing the data)</span> divided by <span style="color:red">the total sum of the likelihood weighted by the prior</span>.</p>
+</div>
 <div id="automating-wordle" class="section level2">
 <h2>Automating Wordle</h2>
 <p>Recently I stumbled upon the Wordle craze, and lost interest after trying to solve them manually for one or two days. Programmatic attempts held my attention for much longer as I stumbled upon new ways to implement solutions. The most mind-catching one was a method using Z3:</p>
