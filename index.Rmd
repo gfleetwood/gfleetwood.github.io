@@ -6,6 +6,7 @@ output:
     toc: true
     toc_float: true
     toc_collapsed: true
+    code_folding: hide
 toc_depth: 3
 number_sections: true
 theme: lumen
