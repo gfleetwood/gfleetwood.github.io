@@ -15,6 +15,10 @@ header-includes:
   - \usepackage{xcolor}
 ---
 
+## Test Action
+
+hold
+
 ## Colored Equations
 
 I had this laying around as a gist and decided to include it here. See the source here: 
