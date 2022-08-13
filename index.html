@@ -262,6 +262,33 @@ div.tocify {
 </div>
 
 
+<div id="propositional-logic-in-python" class="section level2">
+<h2>Propositional Logic In Python</h2>
+<p>Recently I wanted to compare two truth tables. After some frustrating googling for a simple site to use, I decided to try Python. It was easy:</p>
+<pre><code>from itertools import product
+from pandas import DataFrame
+ 
+exp = lambda a, b, c, d, e: a and b or c and d and e
+exp2 = lambda a, b, c, d, e: a and (b or c) and d and e
+ 
+def exp3(a, b, c, d, e): 
+ 
+  result = a and b or c and d and e
+  truth_table = {&quot;a&quot;: a, &quot;b&quot;: b, &quot;c&quot;: c, &quot;d&quot;: d, &quot;e&quot;: e, &quot;a &amp; b | c &amp; d &amp; e&quot;: result}
+ 
+  return(truth_table)
+ 
+arr = [False, True]
+cartesian_product = list(product(arr, arr, arr, arr, arr))
+ 
+#for a,b in zip(list(map(lambda x: exp(*x), cartesian_product)), list(map(lambda x: exp2(*x), cartesian_product))):
+#  print(a == b)
+ 
+truth_table = list(map(lambda x: exp3(*x), cartesian_product))
+truth_table_df = DataFrame(truth_table)
+ 
+truth_table_df</code></pre>
+</div>
 <div id="colored-equations" class="section level2">
 <h2>Colored Equations</h2>
 <p>I had this laying around as a gist and decided to include it here. See the source here:</p>
