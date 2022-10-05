@@ -1,0 +1,32 @@
+---
+title: "Propositional Logic In Python"
+date: "2022-10-05"
+---
+
+Recently I wanted to compare two truth tables. After some frustrating googling for a simple site to use, I decided to try Python. It was easy:
+
+```
+from itertools import product
+from pandas import DataFrame
+ 
+exp = lambda a, b, c, d, e: a and b or c and d and e
+exp2 = lambda a, b, c, d, e: a and (b or c) and d and e
+ 
+def exp3(a, b, c, d, e): 
+ 
+  result = a and b or c and d and e
+  truth_table = {"a": a, "b": b, "c": c, "d": d, "e": e, "a & b | c & d & e": result}
+ 
+  return(truth_table)
+ 
+arr = [False, True]
+cartesian_product = list(product(arr, arr, arr, arr, arr))
+ 
+#for a,b in zip(list(map(lambda x: exp(*x), cartesian_product)), list(map(lambda x: exp2(*x), cartesian_product))):
+#  print(a == b)
+ 
+truth_table = list(map(lambda x: exp3(*x), cartesian_product))
+truth_table_df = DataFrame(truth_table)
+ 
+truth_table_df
+```

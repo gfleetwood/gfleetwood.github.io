@@ -1,0 +1,81 @@
+---
+title: "Automating Wordle"
+date: "2022-10-05"
+---
+
+Recently I stumbled upon the Wordle craze, and lost interest after trying to solve them manually for one or two days. Programmatic attempts held my attention for much longer as I stumbled upon new ways to implement solutions. The most mind-catching one was a method using Z3:
+
+[https://typon.github.io/wordle.html](https://typon.github.io/wordle.html)
+
+My armchair fascination with formal methods in computer science often crossed paths with SAT solvers, but I never really gave them more than a cursory look for the depth involved. This seemed like a good opportunity to dive a bit deeper. 
+
+But that scope only really involved reading the blog and maybe running some lines of code. I need a deeper hook. One eventually came to mind. All the programmatic solutions were only really partially automated. A user would run code, see the wordle feedback, and then make adjustments as needed. I wanted to eliminate the need for adjustments. Everything would be automated.
+
+How to begin. Well, some light RPA was key. I’m not a fan since I think the field is a walking anti-pattern, but it does have its uses. The first snippet of code opened a link to a Wordle clone without the once a day playing limit ([https://hellowordl.net/](https://hellowordl.net/)), and used Python’s pyautogui to enter letters and take a screenshot. Some fiddling around with cropping produced this:
+
+Not bad. Next was the process of detecting letter and colors. Each square is about 55 pixels length and width, so a simple double for loop sufficed. Some googling helped me write this function to get the dominant color in a square:
+
+```python
+def get_dominant_color(letter_square):
+
+  img = Image.fromarray(letter_square)
+  dom_color = sorted(img.getcolors(2 ** 24), reverse = True)[0][1]
+
+  return(dom_color)
+```
+
+Which I saved as a variable:
+
+```python
+COLORS = [
+("yellow", (228, 218, 0)), 
+("gray", (162, 162, 162)), 
+("green", (63, 186, 119))
+]
+```
+
+Of course trying to match colors exactly is just calling for frustration. I used a distance metric instead. 
+
+Next I wanted to use OCR to identify the letters. This easily took up most of my time. Through trial and error I came up with a computer vision pipeline that cleaned up the image above so much that a blind man could see which letters the image contained. Unfortunately neither pytesseract nor the Google Cloud API could. Despair began to set in.
+
+I’m sure you’re now confused. “Why OCR? Aren’t the letters already known since you’re entering the words?” I eventually came to realization as well, and jettisoned (read saved for reference) all that computer vision code.  
+
+I went some way towards writing my own non-Z3 solver before remember my initial goal. Instead I copied over the relevant Z3 code from [https://typon.github.io/wordle.html](https://typon.github.io/wordle.html) and worked to integrate it into my framework. 
+
+My big addition was the logic of how and when to add constraints to the solver. There are seven, two of which are static:
+
+- Only 26 letters (0-25)
+- Only five letter words (sourced from Linux’s dictionary)
+
+The other five are dynamic. In parentheses are the color/s they pertain to:
+
+- Word contains letter (green, yellow)
+- Wrong position in word for letter (yellow)
+- Right position in word for letter (green)
+- Word doesn’t contain letter (gray)
+- Word contains only one instance of the letter (green, yellow)
+
+The last one was the stickler. When the code is being manually updated it’s easy to enough to wield, but in a fully automated setup it was just breaking. Consider a word like `flood`. If I guessed `flodd` the first d would be gray and the other green. With z3 this would adds constraints that d is both in and not in the word. You immediately see why this is a problem. I need to check if a letter that should be considered was already labeled as not being in the word and then remove that constraint.
+
+This, apparently, is not trivial in z3. The closest method is solver.remove() which removes all constraints from the solver. Not ideal. Armed with my accumulated z3 resources I finally delved deep into its workings, and arrived at an answer. I added this snippet of code to the cases where the letter was green or yellow:
+
+```python
+check_if_grey_before = f"letter_{str(letter_info[2])} != {letter_to_index_map[letter_info[0]]}"
+constraints = solver.assertions()
+new_constraints = [
+constraint 
+for constraint in constraints 
+if constraint.__repr__() != check_if_grey_before
+]
+
+if len(constraints) != len(new_constraints): 
+  solver.reset()
+  solver.add(new_constraints)
+```
+
+In a nutshell it checks if the current constraints say the letter wasn’t in the word. If yes, then it filters out that constraint, resets the solver, and then adds back the constraints. I also added logic to the gray condition to skip saying a letter wasn’t in the word if it was already added as being in it.
+
+My solution worked well sometimes, but the solver still broke down. Obviously I attributed this to some wonky logic in updating the solver, so I added logging code to see what constraints are being used on each turn. Looking at the logic led me to the true culprit. Turns out my color detection was not as ironclad as I thought. 
+
+Here’s the full code: [gfleetwood/auto-wordle](https://github.com/gfleetwood/auto-wordle)
+

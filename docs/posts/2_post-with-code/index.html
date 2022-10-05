@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-0.9.598">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2022-10-05">
+
+<title>gf - Automatic Audio Books</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">gf</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html">About</a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/"><i class="bi bi-github" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com"><i class="bi bi-twitter" role="img">
+</i> 
+ </a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Automatic Audio Books</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">October 5, 2022</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<p>Ideas on my “Someday” list usually spend a couple of weeks before leaving forever or returning in disgrace (mine not its). “Can I automatically create an audiobook?” had a successful turn around of about three days.</p>
+<p>The book I choose was Carroll Quigley’s “The Evolution Of Civilizations”. I’m at a point where I am militantly electronic with my reading, so the pdf link from Twitter was perfect. Skimming the book I got the sense that I’d prefer to listen rather than read it - a bifurcation that I recently adopted after ignoring audiobooks for years. No audiobook on Amazon’s left me only one option. (Well there was the possibility of using an end to end implementation like <a href="https://www.getspeechify.com/">Speechify</a> but where would be the fun in that?)</p>
+<p>Three days from idea to completion is the small, visible part of an enormous glacier. Beneath the surface lies hours of previous research into pdf extraction and text to speech (also speech to text) programs. The pipeline and its implementation almost immediately existed as one entity in my mind. Here was my process:</p>
+<ul>
+<li>Use pdf extraction to get the text</li>
+</ul>
+<pre><code>library(pdftools)
+
+text_extracted &lt;- pdf_text("auto-audio-book/CarrollQuigley-TheEvolutionOfCivilizations-AnIntroductionToHistoricalAnalysis1979.pdf")
+
+text_concatenated &lt;- paste(text_extracted, collapse = " ")
+con &lt;- file("evol_of_civilizations.txt")
+writeLines(text_concatenated, con)
+close(con)
+</code></pre>
+<p>Check.</p>
+<ul>
+<li>Clean the text</li>
+</ul>
+<p>So I lied about the automatically part. I still had to go into the document and delete footers, references, the table of contents, etc, and I left stuff in there because it was too tedious to go through a 400+ page book to get every single one. Much easier to ignore them while listening. Alternatively this could be done after the text to speech conversion using a service like <a href="https://www.descript.com/">descript</a>.</p>
+<ul>
+<li>Use text to speech to create the audio</li>
+</ul>
+<p>This turned out to be more of a hassle than I thought it would be. First I went through Google’s convoluted process to get the Text To Speech API working. Then my attempt at making a single mp3 was thwarted by the API’s limits. Chunking the file and adding in a delay (*What felt like two hours later*) left me with 180 separate mp3s. (In retrospect I should have used the multiprocess module to speed it up.)</p>
+<pre><code>from google.cloud import texttospeech
+import time
+
+def tts_book(ind, text_chunk):
+    # Instantiates a client
+    client = texttospeech.TextToSpeechClient()
+
+    # Set the text input to be synthesized
+    synthesis_input = texttospeech.types.SynthesisInput(text = text_chunk)
+
+    # Build the voice request, select the language code ("en-US") and the ssml
+    # voice gender ("neutral")
+    voice = texttospeech.types.VoiceSelectionParams(
+        language_code = 'en-US-Wavenet-B',
+        ssml_gender = texttospeech.enums.SsmlVoiceGender.NEUTRAL
+        )
+
+    # Select the type of audio file you want returned
+    audio_config = texttospeech.types.AudioConfig(
+        audio_encoding = texttospeech.enums.AudioEncoding.MP3
+        )
+
+    # Perform the text-to-speech request on the text input with the selected
+    # voice parameters and audio file type
+    response = client.synthesize_speech(synthesis_input, voice, audio_config)
+
+    # The response's audio_content is binary.
+    with open('output_{}.mp3'.format(ind), 'wb') as out:
+        # Write the response to the output file.
+        out.write(response.audio_content)
+        print('Audio content written to file "output_{}.mp3"'.format(ind))
+
+    return(1)
+
+with open("auto-audio-book/evol-of-civilizations-cleaned.txt", "r") as f:
+    evol_civ = f.read().replace("\\n", " ")
+
+chunks = []
+temp = evol_civ
+
+while len(temp) != 0:
+
+    chunks.append(temp[:4000])
+    temp = temp[4000:]
+
+for ind, chunk in enumerate(chunks):
+    _ = tts_book(ind, chunk)
+    time.sleep(10)
+</code></pre>
+<p>It was a pretty small wrench though. I knew ffmpeg was the solution I needed. The tricky bit was in getting it to work. After some Googling I assembled the parts:</p>
+<pre><code># Get all the mp3 names and write them to a text file.
+ls | grep "output" &gt; mp3-files.txt
+
+# Prepend the word "file" to each line of said text file.
+awk '{print "file " $0}' mp3-files.txt &gt; mp3-files.txt
+
+# Bring in the heavy guns to produce the combined file
+ffmpeg -f concat -safe 0 -i mp3-files.txt -c copy output-final.mp3
+</code></pre>
+<p>Success!</p>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

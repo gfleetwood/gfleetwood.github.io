@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-0.9.598">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2022-10-05">
+
+<title>gf - Building Local DNS Websites</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">gf</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html">About</a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/"><i class="bi bi-github" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com"><i class="bi bi-twitter" role="img">
+</i> 
+ </a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Building Local DNS Websites</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">October 5, 2022</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<p>This is a reference blog on how to build a local DNS.</p>
+<p>I use Google Chrome as my main browser, but I’ve been thinking of switching (or at least trying out) others. This possibility is hampered by Chrome lock-in powered by extensions and bookmarks, with the latter being the main issue.</p>
+<p>The initial step involved a browser agnostic bookmark manager. I settled on buku which is cli based with an additional buku server to allow administration through a web interface. The next step was to permanently run buku server on a local port. Easy enough with systemd. Instead of bookmarking or typing 127.0.0.8000 (for example), I wanted to be able to type <a href="http://buku.me/">buku.me</a> instead. That turned out to be much harder.</p>
+<p>All these instructions pertain to Ubuntu 20.04.</p>
+<p>Step 1:</p>
+<p>Install buku And buku server: <code>pip3 install buku[server]</code>.</p>
+<p>Step 2:</p>
+<p>Permanently run buku server with system d.</p>
+<p>Add this script as an executable to your bin folder. (Mine is called buku_server.) You’ll have to find out where buku server is installed with <code>which bukuserver</code>.</p>
+<pre><code># I'm using port 5555 but choose whichever port you want
+/home/gordon/miniconda3/bin/bukuserver run --host 127.0.0.1 --port 5555
+</code></pre>
+<p>Next add this service file, <code>buku_server.service</code>, to <code>/etc/systemd/system</code>.</p>
+<pre><code>[Unit]
+Description=Buku Server
+
+[Service]
+User=gordon
+WorkingDirectory=/home/gordon/.local/mybin
+ExecStart=/bin/bash /home/gordon/.local/mybin/buku_server
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+</code></pre>
+<p>Start and enable the service.</p>
+<pre><code>systemctl start buku_server.service
+systemctl enable buku_server.service
+</code></pre>
+<p>Go to <code>127.0.0.1:5555</code> to check that buku server is running.</p>
+<p>Step 3:</p>
+<p>This was the draw the rest of the owl part for me. I finally understood the process due to this blog:</p>
+<p><code>https://www.interserver.net/tips/kb/local-domain-names-ubuntu/</code></p>
+<p>First you need to add a line to your <code>/etc/hosts</code> file: <code>127.0.0.1 buku.me</code>. Then add this to a configuration file in <code>/etc/apache2/sites-available</code> (mine is <code>000-default.conf</code>):</p>
+<pre><code># ServerName, ProxyPass, and ProxyPasReverse are the entries to change
+
+&lt;VirtualHost *:80&gt;
+  ServerAdmin test@test.com
+  ServerName buku.me
+  ProxyPass / &lt;http://127.0.0.1:5555/&gt;
+  ProxyPassReverse / &lt;http://127.0.0.1:5555/&gt;
+&lt;/VirtualHost&gt;
+</code></pre>
+<p>With that I was able to go to <a href="http://buku.me/">buku.me</a> in my browser to access the buku server.</p>
+<p>Bonus:</p>
+<p>Even with this setup I still had to manually add urls to buku server. I wanted to have a shortcut, CTRL+B, that would automatically add a url. This solution actually adds whatever is on the clipboard to buku, so it’s on me to make sure it’s a url.</p>
+<p>In Ubuntu I mapped this custom shortcut to CTRL+B: <code>home/gordon/buku_add.py</code> where buku_add.py is:</p>
+<pre><code>import pyperclip
+import os
+
+os.system("buku -a {}".format(pyperclip.paste()))
+</code></pre>
+<p>buku_add.py is a vanilla Python script instead of an executable because that didn’t work. I have no idea why.</p>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
