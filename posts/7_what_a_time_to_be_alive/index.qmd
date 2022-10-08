@@ -1,0 +1,95 @@
+---
+title: "Subtitles On The Go"
+date: "2022-10-08"
+---
+
+Download the video from Youtube:
+
+```
+yt-dlp "https://www.youtube.com/watch?v=q4tpg6mkBTs"
+```
+
+Extract the audio (I changed the name of the file to nims.webm):
+
+```
+ffmpeg -i nims.webm -vn -ab 128k -ar 44100 -y nims.mp3
+```
+
+Setup up OpenAI Whisper...OK, so this is non-trivial. For my workflow I'm renting an A100-80G Linux Desktop from Paperspace. I log into the machine and
+run `sudo apt update` so I can install pip and git. Then I install Whisper (https://github.com/openai/whisper):
+
+```
+pip install git+https://github.com/openai/whisper.git 
+```
+
+There are numerous ways to get the video on the other machine. I chose to send it over with magic wormhole.
+
+I ran the default script provided in the repo:
+
+```
+import whisper
+
+model = whisper.load_model("base")
+result = model.transcribe("audio.mp3")
+print(result["text"])
+```
+
+got a transcript in Japanese and posted it into DeepL for a translation. It was decent but with obvious mistakes even for someone who doesn't speak 
+Japanese. I know Whisper should be able to do translation so I just had to figure it out. 
+
+Turns out the cli has a lot of params one of which is translation. Bad news was my cli installation wasn't working. I had to figure out how do to it
+in Python. Or copy-paste which is what I did after searching the Whisper repo's Discussion page. With that I cut DeepL out of the pipeline, what's more
+the translation was even better. 
+
+Next I needed actual subtitles - another feature tied to the cli installation. I ended up copying and modifying two utility scripts from the Whisper AI
+repo into my own to produce an STR (subtitle) file. This is my final script:
+
+```
+import whisper
+
+def format_timestamp(seconds: float, always_include_hours: bool = False, decimal_marker: str = '.'):
+    assert seconds >= 0, "non-negative timestamp expected"
+    milliseconds = round(seconds * 1000.0)
+
+    hours = milliseconds // 3_600_000
+    milliseconds -= hours * 3_600_000
+
+    minutes = milliseconds // 60_000
+    milliseconds -= minutes * 60_000
+
+    seconds = milliseconds // 1_000
+    milliseconds -= seconds * 1_000
+
+    hours_marker = f"{hours:02d}:" if always_include_hours or hours > 0 else ""
+    return f"{hours_marker}{minutes:02d}:{seconds:02d}{decimal_marker}{milliseconds:03d}"
+
+model = whisper.load_model("large")
+result = model.transcribe("nims.mp3", task="translate")
+#print(result["text"])
+
+with open("script.srt", "w+") as f:
+
+  for i, segment in enumerate(result['segments'], start=1):
+    print(
+            f"{i}\n"
+            f"{format_timestamp(segment['start'], always_include_hours=True, decimal_marker=',')} --> "
+            f"{format_timestamp(segment['end'], always_include_hours=True, decimal_marker=',')}\n"
+            f"{segment['text'].strip().replace('-->', '->')}\n",
+            file = f,
+            flush = True,
+        )
+```
+
+I sent the script back to my computer and then called up ffmpeg to do the honors of generating the video with subtitles:
+
+
+```
+ffmpeg -i nims.webn -vf subtitles=nims_script.srt output.mp4
+```
+
+There's a popular AI youtube channel, Two Minutes Papers, where the host has his own catchphrase, "What a time to be alive!" That's what I said
+after being able to watch and understand what was going in the video. (For QA it helped that the subject and topic was obvious.) It took me a while
+to get the initial pipeline done, but now that its set, I can probably go from video to video with English subtitles in less than 5 minutes - 
+controlling for the size of the video.
+
+What a time to be alive.
