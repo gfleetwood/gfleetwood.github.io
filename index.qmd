@@ -1,5 +1,5 @@
 ---
-title: "myblog"
+title: '"Rise Above Yourself And Grasp The World"'
 listing:
   contents: posts
   sort: "date desc"
