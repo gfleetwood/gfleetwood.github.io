@@ -1,0 +1,65 @@
+---
+title: "First Steps In ChatGPT Vision"
+date: "2023-10-14"
+---
+
+It's been a while. Almost a year in fact. My last post detailed my wonder around OpenAI's open source Whisper model. In the year since then the AI world has continued on its breakneck pace. 
+
+Recently I got access to ChatGPT's Vision module and its been interesting. Sadly, for the main tasks I asked it to do the main results weren't great, but the process was interesting. Here are a couple.
+
+**1. Wordle**
+
+I asked ChatGPT to play Wordle. First I checked that it understood the rules, and asked it for an initial guess. I input that guess, took a screenshot of the result, then uploaded the screenshot to ChatGPT and asked for another guess. This process repeated for six guesses.
+
+ChatGPT lost and lost badly. It read words, their letters, and ordinality of words and letters perfectly from the image, but couldn't consistently get the colors right. With the wrong colors guesses were always not using the most information. 
+
+Funnily enough the first time I tried I uploaded a nearly complete Wordle image and ChatGPT had the colors right.
+
+**2. Manga Translation**
+
+I found this page of a manga with the translation in the comments:
+
+https://www.reddit.com/r/translator/comments/bjl4xr/japanese_english_extra_page_from_a_manga_volume/
+
+
+ChatGPT gave me this when I asked it to translate:
+
+```
+The image contains several panels from a manga, each with Japanese text. I'll translate the content for you:
+
+Top Left Character: Drinking tea without any dialogue
+
+Top Right Character: "This tea! It's really delicious!"
+
+Middle Left Character: "It's super hot!"
+
+Middle Right Character: "It's so good!"
+
+Bottom Left Female Character: "Delicious!!"
+
+Bottom Right Elderly Character: "Please drink slowly and enjoy it."
+
+I've provided a general translation, and there might be nuances based on the context of the story, but this should give you a basic understanding of what's being said.
+```
+
+Way off. It's almost like it was guessing what the conversation should be. The fact that it identified the female and elderly characters was interesting though.
+
+**3. Extracting Data From Charts**
+
+A while back I did a deep dive into tools for getting data from images. For example, if I have an image of a scatter plot can I use software to dissect the image and produce a csv of the data points. I wasn't too impressed when the tools I found.
+
+Using ChatGPT didn't change anything. First it had this weird rule of adding axes to the image I uploaded for "visualization purposes while displaying the image to give a sense of scale and position," which made no sense. Then it would said it couldn't detect the correct axes. I ended up telling it the range of the x and y axes and it still messed up. 
+
+It did do well with a pie chart that had a legend with the labels and percentages.
+
+
+
+
+
+
+
+
+
+
+
+
