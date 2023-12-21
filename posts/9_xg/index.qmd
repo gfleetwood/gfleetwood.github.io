@@ -1,0 +1,20 @@
+---
+title: "xG Experiments"
+date: "2023-12-03"
+---
+
+```{r, echo = FALSE}
+readr::read_csv("data/xg.csv")
+```
+
+![](images/xg_city_burnley_1.png)
+
+![](images/xg_city_burnley_2.png)
+
+![](images/xg_city_burnley_3.png)
+
+![](images/xg_cumulative.jpg)
+
+![](images/xg_timeline.jpg)
+
+the-xg-game.onrender.com/

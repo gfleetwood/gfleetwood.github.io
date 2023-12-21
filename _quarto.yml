@@ -3,7 +3,7 @@ project:
   output-dir: docs
   
 website:
-  title: "pathei mathos"
+  title: ""
   navbar:
     right:
       - about.qmd
