@@ -1,20 +1,33 @@
 ---
 title: "xG Experiments"
-date: "2023-12-03"
+date: "2023-12-24"
 ---
 
-```{r, echo = FALSE}
-readr::read_csv("data/xg.csv")
+Expected Goals is the premier stat in the world of soccer analytics. After struggling to make the jump from research to the media, it's now a staple statistics in every broadcast.
+
+But the some of the early pushback still remains, and it's often quoted as
+ an afterthought and without much comprehension. I thought a good idea would be to incorporate it into highlights to reinforce what it means.
+ 
+The table below is the first five rows xG data from Burnley x Man City in the 2023-24 season.
+
+```{r, echo = FALSE, warning = FALSE, message=FALSE}
+knitr::kable(readr::read_csv("xg.csv")[1:5,])
 ```
 
-![](images/xg_city_burnley_1.png)
 
+See the still images resulting from my poor video editing.
+
+![](images/xg_city_burnley_1.png)
 ![](images/xg_city_burnley_2.png)
 
 ![](images/xg_city_burnley_3.png)
+
+I also made a couple of plots of to explore how to represent xG data. This is from fake data I generated.
 
 ![](images/xg_cumulative.jpg)
 
 ![](images/xg_timeline.jpg)
 
-the-xg-game.onrender.com/
+Finally, I made a game! It's just a demo. It asks the player to watch a goal and guess what the xG of the shot was. The player's score is determined by the Brier score. Unfortunately, I can't keep it deploy right now, but here's the code if you want to deploy and play it:
+
+https://github.com/gfleetwood/the_xg_game

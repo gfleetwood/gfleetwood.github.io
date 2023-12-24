@@ -1,0 +1,14 @@
+{
+  "hash": "c3528dbf4f1fc3373a8b2e4dd38a616e",
+  "result": {
+    "markdown": "---\ntitle: \"xG Experiments\"\ndate: \"2023-12-24\"\n---\n\n\nExpected Goals is the premier stat in the world of soccer analytics. After struggling to make the jump from research to the media, it's now a staple statistics in every broadcast.\n\nBut the some of the early pushback still remains, and it's often quoted as\n an afterthought and without much comprehension. I thought a good idea would be to incorporate it into highlights to reinforce what it means.\n \nThe table below is the first five rows xG data from Burnley x Man City in the 2023-24 season.\n\n\n::: {.cell}\n::: {.cell-output-display}\n| Minute|Player...2      |Squad           |   xG| PSxG|Outcome    | Distance|Body Part  |Notes  |Player...10     |Event...11  |Player...12     |Event...13  |\n|------:|:---------------|:---------------|----:|----:|:----------|--------:|:----------|:------|:---------------|:-----------|:---------------|:-----------|\n|      4|Erling Haaland  |Manchester City | 0.17| 0.62|Goal       |        8|Left Foot  |Volley |Rodri           |Pass (Live) |Kevin De Bruyne |Pass (Live) |\n|      6|Kevin De Bruyne |Manchester City | 0.02| 0.00|Off Target |       32|Right Foot |NA     |Phil Foden      |Pass (Live) |Nathan Aké      |Pass (Live) |\n|     11|Erling Haaland  |Manchester City | 0.21| 0.00|Off Target |        6|Right Foot |Volley |Kevin De Bruyne |Pass (Live) |Rodri           |Pass (Live) |\n|     15|Luca Koleosho   |Burnley         | 0.08| 0.00|Off Target |       15|Right Foot |NA     |Vitinho         |Pass (Live) |Lyle Foster     |Pass (Live) |\n|     18|Zeki Amdouni    |Burnley         | 0.03| 0.02|Saved      |       15|Left Foot  |NA     |Luca Koleosho   |Pass (Live) |Vitinho         |Pass (Live) |\n:::\n:::\n\n\n\nSee the still images resulting from my poor video editing.\n\n![](images/xg_city_burnley_1.png)\n![](images/xg_city_burnley_2.png)\n\n![](images/xg_city_burnley_3.png)\n\nI also made a couple of plots of to explore how to represent xG data. This is from fake data I generated.\n\n![](images/xg_cumulative.jpg)\n\n![](images/xg_timeline.jpg)\n\nFinally, I made a game! It's just a demo. It asks the player to watch a goal and guess what the xG of the shot was. The player's score is determined by the Brier score. Unfortunately, I can't keep it deploy right now, but here's the code if you want to deploy and play it:\n\nhttps://github.com/gfleetwood/the_xg_game",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
